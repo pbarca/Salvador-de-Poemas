@@ -11,16 +11,27 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        public string path = Application.StartupPath + "\\Resources\\Teste.txt";
+        RTFFile MeuTexto = new RTFFile();
         private void Form1_Load(object sender, EventArgs e)
         {
-            richTextBox1.Text = File.ReadAllText(path);
+            richTextBox1.Text = MeuTexto.Texto;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(path, richTextBox1.Text);
+            MeuTexto.Texto = richTextBox1.Text;
+            MeuTexto.Salvar();
         }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            MeuTexto.Texto = richTextBox1.Text = "";
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = MeuTexto.Texto;
+        }
     }
+
 }
