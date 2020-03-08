@@ -9,6 +9,7 @@ namespace WindowsFormsApp3
         public Form1()
         {
             InitializeComponent();
+            // Teste Github
         }
 
         RTFFile MeuTexto = new RTFFile();
